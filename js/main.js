@@ -38,14 +38,15 @@
 
     collection.forEach(function (element) {
       element.animate([
-      { transform: 'translate(0,0)' },
-      { transform: 'translate(' + getDistance() + 'rem,' + getDistance() + 'rem)' }],
-      {
-        duration: (Math.random() + 1) * 10000,
-        direction: 'alternate',
-        easing: 'ease-in-out',
-        fill: 'both',
-        iterations: Infinity });
+        { transform: 'translate(0,0)' },
+        { transform: 'translate(' + getDistance() + 'rem,' + getDistance() + 'rem)' }],
+        {
+          duration: (Math.random() + 1) * 10000,
+          direction: 'alternate',
+          easing: 'ease-in-out',
+          fill: 'both',
+          iterations: Infinity
+        });
 
     });
   }
@@ -61,18 +62,18 @@
 
 var inAnimation = 0;
 
-$('#Slime').click(function (){
+document.getElementById("Slime").addEventListener('click', (e) => {
   if (inAnimation == 0) {
     if ($('#Slime').hasClass('ayaya')) {
       inAnimation = 1;
       $('#Slime').addClass('ayaya-fade-out');
-      setTimeout(function (){$('#Slime').removeClass('ayaya');}, 500);
-      setTimeout(function (){$('#Slime').removeClass('ayaya-fade-out'); inAnimation = 0;}, 1100);
+      setTimeout(function () { $('#Slime').removeClass('ayaya'); }, 500);
+      setTimeout(function () { $('#Slime').removeClass('ayaya-fade-out'); inAnimation = 0; }, 1100);
     } else {
       inAnimation = 1;
       $('#Slime').addClass('ayaya-fade-in');
-      setTimeout(function (){$('#Slime').addClass('ayaya');}, 500);
-      setTimeout(function (){$('#Slime').removeClass('ayaya-fade-in'); inAnimation = 0;}, 1100);
+      setTimeout(function () { $('#Slime').addClass('ayaya'); }, 500);
+      setTimeout(function () { $('#Slime').removeClass('ayaya-fade-in'); inAnimation = 0; }, 1100);
+    }
   }
-}
 })

@@ -1,2 +1,0 @@
-User-Agent: *
-Disallow: /google46d1c17598f3d2b7.html
